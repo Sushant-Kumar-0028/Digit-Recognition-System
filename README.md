@@ -1,2 +1,2 @@
 # Digit-Recognition-System
-Hand Written Digits are 
+Hand Written Digits Recognition
