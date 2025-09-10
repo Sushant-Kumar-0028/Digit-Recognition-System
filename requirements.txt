@@ -1,5 +1,5 @@
-streamlit
-tensorflow
+streamlit==1.29.0
+tensorflow==2.15.0
 pillow
 numpy
-streamlit-croppers
+opencv-python-headless
