@@ -46,15 +46,15 @@ Advanced preprocessing (adaptive thresholding, morphology) to handle noisy image
 Skew/rotation correction for camera images.
 Training on larger, diverse handwriting datasets for improved robustness.
 
+Local Host
 Install dependencies
-
 pip install -r requirements.txt
 
 Run the Streamlit app
 streamlit run app.pystreamlit run app.py --server.port 8080 --server.address 0.0.0.0
 
 Access the app
-Open the URL displayed in the terminal (usually http://localhost:8501) in your browser.
+Open the URL: https://digit-recognition-system-sushant-kumar.streamlit.app/
 
 Usage
 
