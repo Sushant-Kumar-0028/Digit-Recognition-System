@@ -69,15 +69,13 @@ Predict: Click the predict button to view recognized digits and annotated images
 
 Dependencies
 Python >= 3.8
-TensorFlow / Keras
+TensorFlow
 OpenCV (opencv-python)
 Pillow (PIL)
 Streamlit (streamlit)
 NumPy
 
-Install all dependencies using:
 
-pip install -r requirements.txt
 
 Author
 

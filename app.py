@@ -86,8 +86,8 @@ st.set_page_config(page_title="Digit Recognition", layout="wide")
 st.markdown(
     """
     <div style="background-color:#ADD8E6; padding:10px; display:flex; align-items:center;">
-        <a href="https://github.com/sushant-kumar-0028" target="_blank">
-            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+        <a href="https://github.com/Sushant-Kumar-0028/Digit-Recognition-System" target="_blank">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" s
             width="35" style="margin-right:15px;">
         </a>
         <h2 style="margin:0; width:100%; text-align:center; color:black; font-weight:bold;">
@@ -109,16 +109,18 @@ with col1:
 
     if uploaded_file:
         img = Image.open(uploaded_file)
-        st.image(img, caption="Uploaded Image", use_column_width=True)
+        st.image(img, caption="Uploaded Image", use_container_width=True)
 
-        if st.button("Submit"):
+        if st.button("Submit", key="upload_submit"):
             result, annotated = segment_and_predict(img)
-            st.success(f"Recognized Digits:\n{result}")
-            st.image(annotated, caption="Detected Digits with Bounding Boxes", use_column_width=True)
+            st.image(annotated, caption="Detected Digits with Bounding Boxes", use_container_width=True)
 
 # ---------- Camera section ----------
 with col2:
     st.subheader("📸 Use Camera")
+
+    # Helper message for better accuracy
+    st.info("✍️ Please write numbers on an unruled / plain white page for best results.")
 
     # Initialize camera state
     if 'camera_active' not in st.session_state:
@@ -126,24 +128,24 @@ with col2:
 
     # Activate / Close Camera buttons
     if not st.session_state['camera_active']:
-        if st.button("Activate Camera"):
+        if st.button("Activate Camera", key="activate_camera"):
             st.session_state['camera_active'] = True
     else:
-        if st.button("Close Camera"):
+        if st.button("Close Camera", key="close_camera"):
             st.session_state['camera_active'] = False
 
     # Show camera input only if active
     if st.session_state['camera_active']:
-        camera_file = st.camera_input("Take a picture")
+        camera_file = st.camera_input("Take a picture", key="camera_input")
 
         if camera_file:
             cam_img = Image.open(camera_file)
-            st.image(cam_img, caption="Captured Image", use_column_width=True)
+            st.image(cam_img, caption="Captured Image", use_container_width=True)
 
-            if st.button("Submit"):
+            if st.button("Submit", key="camera_submit"):
                 result, annotated = segment_and_predict(cam_img)
-                st.success(f"Recognized Digits:\n{result}")
-                st.image(annotated, caption="Detected Digits with Bounding Boxes", use_column_width=True)
+                # st.success(f"Recognized Digits:\n{result}")
+                st.image(annotated, caption="Detected Digits with Bounding Boxes", use_container_width=True)
 
 # Footer
 st.markdown(
