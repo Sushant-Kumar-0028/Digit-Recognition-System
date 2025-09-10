@@ -1,8 +1,8 @@
-streamlit==1.29.0
-tensorflow==2.11.0
-keras==2.11.0
-protobuf==3.20.3
-numpy==1.26.4
-pillow
-opencv-python-headless
+streamlit
+tensorflow
+numpy
 pandas
+matplotlib
+Pillow
+scikit-learn
+opencv-python-headless
